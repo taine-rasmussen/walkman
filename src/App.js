@@ -1,9 +1,10 @@
-
+import "bootstrap/dist/css/bootstrap.min.css"
+import Login from './Login'
 
 const App = () => {
   return (
     <div>
-      working
+      <Login />
     </div>
   )
 }
