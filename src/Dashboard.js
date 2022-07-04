@@ -1,16 +1,11 @@
 import useAuth from './useAuth'
 
-const Dashboard = (props) => {
-  const {
-    code
-  } = props
+const Dashboard = ({ code }) => {
 
   const accessToken = useAuth(code)
-
-
   return (
     <div>
-      dashboard
+      {code}
     </div>
   )
 }
