@@ -13,6 +13,8 @@ const useAuth = (code) => {
       code,
     }).then(res => {
       console.log(res.data)
+    }).catch(() => {
+      windon.location = '/'
     })
   }, [code])
 

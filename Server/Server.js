@@ -1,7 +1,11 @@
 const express = require('express')
-const spoitfyWebApi = require('spotify-web-api-node')
+const spotifyWebApi = require('spotify-web-api-node')
+const cors = require('cors')
+const bodyParser = require('body-parser')
 
 const app = express()
+app.use(cors())
+app.use(bodyParser.json())
 
 app.post('/login', (req, res) => {
   const code = req.body.code
@@ -19,7 +23,8 @@ app.post('/login', (req, res) => {
         refreshToken: data.body.refresh_token,
         expires: data.body.expires_in
       })
-    }).catch(() => {
+    }).catch((err) => {
+      console.log(err)
       res.sendStatus(400)
     })
 })
