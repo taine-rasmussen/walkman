@@ -17,10 +17,13 @@ const useAuth = (code) => {
       setRefreshToken(res.data.refreshToken)
       setExpiresIn(res.data.expiresIn)
       window.history.pushState({}, null, "/")
-    }).catch(() => {
-      window.location = '/'
+    }).catch((err) => {
+      console.log(err)
+      // window.location = '/'
     })
   }, [code])
+
+
 
 }
 
