@@ -1,5 +1,5 @@
 const express = require('express')
-const spoitfyWebApi = requrire('spotify-web-api-node')
+const spoitfyWebApi = require('spotify-web-api-node')
 
 const app = express()
 
@@ -23,3 +23,5 @@ app.post('/login', (req, res) => {
       res.sendStatus(400)
     })
 })
+
+app.listen(3001)
