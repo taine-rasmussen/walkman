@@ -5,7 +5,7 @@ const app = express()
 
 app.post('/login', (req, res) => {
   const code = req.body.code
-  const spotifyApi = new SpotifyWebApi({
+  const spotifyApi = new spotifyWebApi({
     redirectUri: 'https://localhost:3000',
     clientId: process.env.REACT_APP_CLIENT_ID,
     clientSecret: process.env.REACT_APP_CLIENT_SECRET
