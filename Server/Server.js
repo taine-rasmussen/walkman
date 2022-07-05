@@ -1,18 +1,20 @@
 const express = require('express')
-const spotifyWebApi = require('spotify-web-api-node')
+const SpotifyWebApi = require("spotify-web-api-node")
 const cors = require('cors')
 const bodyParser = require('body-parser')
 
 const app = express()
 app.use(cors())
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
-app.post('/login', (req, res) => {
+
+app.post("/login", (req, res) => {
   const code = req.body.code
-  const spotifyApi = new spotifyWebApi({
-    redirectUri: 'https://localhost:3000',
+  const spotifyApi = new SpotifyWebApi({
+    redirectUri: 'http://localhost:3000',
     clientId: process.env.REACT_APP_CLIENT_ID,
-    clientSecret: process.env.REACT_APP_CLIENT_SECRET
+    clientSecret: process.env.REACT_APP_CLIENT_SECRET,
   })
 
   spotifyApi
@@ -21,10 +23,10 @@ app.post('/login', (req, res) => {
       res.json({
         accessToken: data.body.access_token,
         refreshToken: data.body.refresh_token,
-        expires: data.body.expires_in
+        expiresIn: data.body.expires_in,
       })
-    }).catch((err) => {
-      console.log(err)
+    })
+    .catch(err => {
       res.sendStatus(400)
     })
 })
