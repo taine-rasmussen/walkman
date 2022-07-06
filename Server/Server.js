@@ -12,9 +12,10 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.post("/login", (req, res) => {
   const code = req.body.code
   const spotifyApi = new SpotifyWebApi({
-    redirectUri: 'http://localhost:3000',
-    clientId: process.env.REACT_APP_CLIENT_ID,
-    clientSecret: process.env.REACT_APP_CLIENT_SECRET,
+    redirectUri: "http://localhost:3000",
+    clientId: "ee877ff172d84549ba81bbc86cd28478",
+    clientSecret: "e488e39814af4698ad0170d3f208e8db"
+
   })
 
   spotifyApi
@@ -28,6 +29,7 @@ app.post("/login", (req, res) => {
     })
     .catch(err => {
       res.sendStatus(400)
+      console.log(err)
     })
 })
 
