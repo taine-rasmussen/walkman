@@ -15,7 +15,6 @@ app.post("/login", (req, res) => {
     redirectUri: "http://localhost:3000",
     clientId: "ee877ff172d84549ba81bbc86cd28478",
     clientSecret: "e488e39814af4698ad0170d3f208e8db"
-
   })
 
   spotifyApi
