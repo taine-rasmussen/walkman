@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-const useAuth = ({ code }) => {
+const useAuth = (code) => {
 
   const [accessToken, setAccessToken] = useState()
   const [refreshToken, setRefreshToken] = useState()
@@ -21,12 +21,12 @@ const useAuth = ({ code }) => {
       })
       .catch((err) => {
         console.log(err)
-        // window.location = "/"
+        window.location = "/"
       })
   }, [code])
 
 
-
+  return accessToken
 }
 
 export default useAuth
