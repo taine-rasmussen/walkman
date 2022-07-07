@@ -7,13 +7,21 @@ const Dashboard = ({ code }) => {
   const [search, setSearch] = useState('')
 
   return (
-    <Container>
+    <Container
+      className="d-flex flex-column py-2"
+      style={{ height: '100vh' }}
+    >
       <Form.Control
         type="Search"
         placeholder="Search Songs/Artist"
         value={search}
         onChange={e => setSearch(e.target.value)}
       />
+      <div
+        className="flex-grow-1 my-2"
+        style={{ overflowY: 'auto' }}
+      >
+      </div>
     </Container>
   )
 }
