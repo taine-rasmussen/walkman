@@ -1,15 +1,20 @@
+import { Container, Form } from 'react-bootstrap'
+import { useState } from 'react'
 import useAuth from './useAuth';
 
 const Dashboard = ({ code }) => {
-
   const accessToken = useAuth(code)
-
-  console.log(code)
+  const [search, setSearch] = useState('')
 
   return (
-    <div>
-      {code}
-    </div>
+    <Container>
+      <Form.Control
+        type="Search"
+        placeholder="Search Songs/Artist"
+        value={search}
+        onChange={e => setSearch(e.target.value)}
+      />
+    </Container>
   )
 }
 
