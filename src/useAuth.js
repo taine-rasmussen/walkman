@@ -27,6 +27,7 @@ const useAuth = (code) => {
 
   useEffect(
     () => {
+      // Prevent running before tokens are defined
       if (!refreshToken || !expiresIn) return
       const interval = setInterval(() => {
         axios
