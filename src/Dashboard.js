@@ -21,6 +21,11 @@ const Dashboard = ({ code }) => {
   useEffect(
     () => {
       if (!search) return setSearchResults([])
+      if (!accessToken) return
+
+      spotifyApi.searchTracks(search).then(res => {
+        console.log(res)
+      })
     }, [search, accessToken])
 
   return (
