@@ -1,10 +1,27 @@
+import { useState, useEffect } from 'react'
 import { Container, Form } from 'react-bootstrap'
-import { useState } from 'react'
+import SpotifyWebApi from 'spotify-web-api-node'
 import useAuth from './useAuth';
+
+const spotifyApi = new SpotifyWebApi({
+  clientId: 'ee877ff172d84549ba81bbc86cd28478',
+})
 
 const Dashboard = ({ code }) => {
   const accessToken = useAuth(code)
   const [search, setSearch] = useState('')
+  const [searchResults, setSearchResults] = useState([])
+
+  useEffect(
+    () => {
+      if (!accessToken) return
+      spotifyApi.setAccessToken(accessToken)
+    }, [accessToken])
+
+  useEffect(
+    () => {
+      if (!search) return setSearchResults([])
+    }, [search, accessToken])
 
   return (
     <Container
