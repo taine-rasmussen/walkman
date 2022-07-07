@@ -24,9 +24,28 @@ const Dashboard = ({ code }) => {
       if (!accessToken) return
 
       spotifyApi.searchTracks(search).then(res => {
-        console.log(res)
+        setSearchResults(
+          res.body.tracks.items.map(track => {
+            const smallestAlbumImage = track.album.images.reduce(
+              (smallest, image) => {
+                if (image.height < smallest.height) return image
+                return smallest
+              },
+              track.album.images[0]
+            )
+
+            return {
+              artist: track.artists[0].name,
+              title: track.name,
+              uri: track.uri,
+              albumUrl: smallestAlbumImage.url,
+            }
+          })
+        )
       })
     }, [search, accessToken])
+
+  console.log(searchResults)
 
   return (
     <Container
@@ -43,6 +62,13 @@ const Dashboard = ({ code }) => {
         className="flex-grow-1 my-2"
         style={{ overflowY: 'auto' }}
       >
+        {searchResults.map((track) => {
+          return (
+            <>
+              <img src={track.albumUrl} key={track.title} />
+            </>
+          )
+        })}
       </div>
     </Container>
   )
