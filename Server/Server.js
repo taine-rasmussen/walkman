@@ -32,4 +32,28 @@ app.post("/login", (req, res) => {
     })
 })
 
+app.post('/refresh', (req, res) => {
+  const refreshToken = req.body.refresh_token
+  const spotifyApi = new SpotifyWebApi({
+    redirectUri: "http://localhost:3000",
+    clientId: "ee877ff172d84549ba81bbc86cd28478",
+    clientSecret: "e488e39814af4698ad0170d3f208e8db",
+    refreshToken,
+  })
+
+
+  spotifyApi
+    .refreshAccessToken()
+    .then(data => {
+      res.json({
+        accessToken: data.body.accessToken,
+        expiresIn: data.body.expiresIn,
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      res.sendStatus(400)
+    })
+})
+
 app.listen(3001)
