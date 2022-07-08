@@ -22,8 +22,8 @@ const Dashboard = ({ code }) => {
     () => {
       if (!search) return setSearchResults([])
       if (!accessToken) return
-
       let cancel = false;
+
       spotifyApi.searchTracks(search).then(res => {
         if (cancel) return;
         setSearchResults(
