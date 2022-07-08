@@ -23,7 +23,9 @@ const Dashboard = ({ code }) => {
       if (!search) return setSearchResults([])
       if (!accessToken) return
 
+      let cancel = false;
       spotifyApi.searchTracks(search).then(res => {
+        if (cancel) return;
         setSearchResults(
           res.body.tracks.items.map(track => {
             const smallestAlbumImage = track.album.images.reduce(
@@ -43,9 +45,8 @@ const Dashboard = ({ code }) => {
           })
         )
       })
+      return () => cancel = true;
     }, [search, accessToken])
-
-  console.log(searchResults)
 
   return (
     <Container
@@ -66,6 +67,7 @@ const Dashboard = ({ code }) => {
           return (
             <>
               <img src={track.albumUrl} key={track.title} />
+              <h3>{track.title}</h3>
             </>
           )
         })}
