@@ -83,7 +83,6 @@ const Dashboard = ({ code }) => {
         <Player
           accessToken={accessToken}
           trackUri={playingTrack?.uri}
-
         />
       </div>
     </Container>
