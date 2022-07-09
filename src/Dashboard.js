@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Container, Form } from 'react-bootstrap'
 import SpotifyWebApi from 'spotify-web-api-node'
 import useAuth from './useAuth';
+import Player from './Player'
 
 const spotifyApi = new SpotifyWebApi({
   clientId: 'ee877ff172d84549ba81bbc86cd28478',
@@ -71,6 +72,9 @@ const Dashboard = ({ code }) => {
             </>
           )
         })}
+      </div>
+      <div>
+        <Player />
       </div>
     </Container>
   )
