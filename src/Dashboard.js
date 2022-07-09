@@ -76,7 +76,7 @@ const Dashboard = ({ code }) => {
       <div>
         <Player
           accessToken={accessToken}
-          trackUri={trackUri}
+        // trackUri={trackUri}
 
         />
       </div>

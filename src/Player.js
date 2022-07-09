@@ -1,4 +1,4 @@
-import SpotifyPlayer from 'react-spotify-wev-playback'
+import SpotifyPlayer from 'react-spotify-web-playback'
 
 const Player = (props) => {
   const {
