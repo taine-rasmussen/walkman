@@ -1,9 +1,20 @@
 import SpotifyPlayer from 'react-spotify-wev-playback'
 
-const Player = () => {
+const Player = (props) => {
+  const {
+    accessToken,
+    trackUri
+  } = props
+
+  if (!accessToken) return;
+
   return (
     <>
-      <SpotifyPlayer />
+      <SpotifyPlayer
+        token={accessToken}
+        showSaveIcon
+        uris={trackUri ? [trackUri] : []}
+      />
 
     </>
   )

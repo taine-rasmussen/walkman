@@ -74,7 +74,11 @@ const Dashboard = ({ code }) => {
         })}
       </div>
       <div>
-        <Player />
+        <Player
+          accessToken={accessToken}
+          trackUri={trackUri}
+
+        />
       </div>
     </Container>
   )
