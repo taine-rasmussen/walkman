@@ -1,4 +1,3 @@
-import { MusicContext } from '../MusicContext'
 import { useState } from 'react'
 import Player from '../mainPlayer/Player'
 import Search from '../Search/Search'

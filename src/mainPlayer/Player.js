@@ -27,6 +27,7 @@ const Player = (props) => {
         color: '#BABABA',
         loaderColor: '#fff',
         sliderColor: '#1DD05D',
+        sliderHandleColor: '#fff',
         trackArtistColor: '#BABABA',
         trackNameColor: '#BABABA',
       }}
