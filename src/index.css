@@ -1,5 +1,6 @@
-* {
+body {
+  height: 100vh;
+  background: #181818;
   margin: 0;
   padding: 0;
-  background: #121212;
 }

@@ -8,9 +8,11 @@ const Player = (props) => {
   } = props
 
   const [play, setPlay] = useState(false)
+
   useEffect(() => setPlay(true), [trackUri])
 
   if (!accessToken) return null
+
   return (
     <SpotifyPlayer
       token={accessToken}
@@ -20,6 +22,14 @@ const Player = (props) => {
       }}
       play={play}
       uris={trackUri ? [trackUri] : []}
+      styles={{
+        bgColor: '#181818',
+        color: '#BABABA',
+        loaderColor: '#fff',
+        sliderColor: '#1DD05D',
+        trackArtistColor: '#BABABA',
+        trackNameColor: '#BABABA',
+      }}
     />
   )
 }

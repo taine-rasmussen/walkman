@@ -1,4 +1,3 @@
-import "bootstrap/dist/css/bootstrap.min.css"
 import Login from './Login/Login'
 import Dashboard from './Dashboard/Dashboard'
 import './index.css'
