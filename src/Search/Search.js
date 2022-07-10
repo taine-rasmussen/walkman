@@ -4,8 +4,7 @@ import { Container, Form } from 'react-bootstrap'
 import SpotifyWebApi from 'spotify-web-api-node'
 import useAuth from '../Login/useAuth'
 
-const Search = ({ setPlayingTrack, code }) => {
-  const accessToken = useAuth(code)
+const Search = ({ setPlayingTrack, accessToken }) => {
   const spotifyApi = new SpotifyWebApi({
     clientId: 'ee877ff172d84549ba81bbc86cd28478',
   })
