@@ -10,22 +10,18 @@ const Dashboard = ({ code }) => {
   const [playingTrack, setPlayingTrack] = useState()
 
   return (
-    <MusicContext.Provider
-      value={
-        'nothing'
-      }
-    >
+    <div className="dashboard_container">
       <Search
         setPlayingTrack={setPlayingTrack}
         accessToken={accessToken}
       />
-      <div>
+      <div className="dashboard_footer">
         <Player
           accessToken={accessToken}
           trackUri={playingTrack?.uri}
         />
       </div>
-    </MusicContext.Provider >
+    </div>
   )
 }
 
