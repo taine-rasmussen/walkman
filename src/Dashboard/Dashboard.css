@@ -1,10 +1,10 @@
-.dasboard_container {
-  height: 100%;
+.dashboard_container {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .dashboard_footer {
-  min-height: 15%;
+  padding: 20px;
 }

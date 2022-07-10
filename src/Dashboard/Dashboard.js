@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Player from '../mainPlayer/Player'
 import Search from '../Search/Search'
 import useAuth from '../Login/useAuth'
+import './Dashboard.css'
 
 const Dashboard = ({ code }) => {
   const accessToken = useAuth(code)
