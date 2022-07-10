@@ -30,6 +30,7 @@ const Player = (props) => {
         trackArtistColor: '#BABABA',
         trackNameColor: '#BABABA',
       }}
+      style={{ padding: '20px' }}
     />
   )
 }
