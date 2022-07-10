@@ -1,19 +1,17 @@
 import { useState, useEffect } from 'react'
-import { Container, Form } from 'react-bootstrap'
 import TrackSearchResults from './TrackSearchResults'
+import { Container, Form } from 'react-bootstrap'
 import SpotifyWebApi from 'spotify-web-api-node'
-import useAuth from './useAuth';
-import Player from './Player'
+import useAuth from '../Login/useAuth'
 
-const spotifyApi = new SpotifyWebApi({
-  clientId: 'ee877ff172d84549ba81bbc86cd28478',
-})
-
-const Dashboard = ({ code }) => {
+const Search = ({ setPlayingTrack, code }) => {
   const accessToken = useAuth(code)
+  const spotifyApi = new SpotifyWebApi({
+    clientId: 'ee877ff172d84549ba81bbc86cd28478',
+  })
+
   const [search, setSearch] = useState('')
   const [searchResults, setSearchResults] = useState([])
-  const [playingTrack, setPlayingTrack] = useState()
 
   const chooseTrack = (track) => {
     setPlayingTrack(track);
@@ -24,7 +22,7 @@ const Dashboard = ({ code }) => {
     () => {
       if (!accessToken) return
       spotifyApi.setAccessToken(accessToken)
-    }, [accessToken])
+    }, [accessToken, spotifyApi])
 
   useEffect(
     () => {
@@ -32,7 +30,7 @@ const Dashboard = ({ code }) => {
       if (!accessToken) return
       let cancel = false;
 
-      spotifyApi.searchTracks(search).then(res => {
+      spotifyApi?.searchTracks(search).then(res => {
         if (cancel) return;
         setSearchResults(
           res.body.tracks.items.map(track => {
@@ -71,7 +69,7 @@ const Dashboard = ({ code }) => {
         className="flex-grow-1 my-2"
         style={{ overflowY: 'auto' }}
       >
-        {searchResults.map(track => (
+        {searchResults?.map(track => (
           <TrackSearchResults
             track={track}
             key={track.uri}
@@ -79,14 +77,8 @@ const Dashboard = ({ code }) => {
           />
         ))}
       </div>
-      <div>
-        <Player
-          accessToken={accessToken}
-          trackUri={playingTrack?.uri}
-        />
-      </div>
     </Container>
   )
 }
 
-export default Dashboard
+export default Search

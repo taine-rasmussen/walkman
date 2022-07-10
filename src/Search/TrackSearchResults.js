@@ -1,4 +1,3 @@
-import react from 'react';
 
 const TrackSearchResults = (props) => {
   const {
