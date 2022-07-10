@@ -8,9 +8,11 @@ const Player = (props) => {
   } = props
 
   const [play, setPlay] = useState(false)
+
   useEffect(() => setPlay(true), [trackUri])
 
   if (!accessToken) return null
+
   return (
     <SpotifyPlayer
       token={accessToken}
