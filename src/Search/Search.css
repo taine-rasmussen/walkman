@@ -4,8 +4,11 @@
 }
 .result_container {
   display: flex;
+  padding-bottom: 5px;
   margin: 10px;
   align-items: center;
+  width: max-content;
+  border-bottom: 1px solid #181818;
 }
 
 .results_song {
@@ -28,5 +31,5 @@
 }
 
 .result_container:hover {
-  border-bottom: #1dd05d;
+  border-bottom: 1px solid #1dd05d;
 }
