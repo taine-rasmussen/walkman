@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import TrackSearchResults from './TrackSearchResults'
 import { Container, Form } from 'react-bootstrap'
 import SpotifyWebApi from 'spotify-web-api-node'
+import './Search.css'
 
 const Search = ({ setPlayingTrack, accessToken }) => {
   const spotifyApi = new SpotifyWebApi({
@@ -60,9 +61,7 @@ const Search = ({ setPlayingTrack, accessToken }) => {
         value={search}
         onChange={e => setSearch(e.target.value)}
       />
-      <div
-        style={{ overflowY: 'auto' }}
-      >
+      <div className="results_container">
         {searchResults?.map(track => (
           <TrackSearchResults
             track={track}

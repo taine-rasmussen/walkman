@@ -1,4 +1,8 @@
 .results_container {
+  max-height: 40%;
+  overflow-y: auto;
+}
+.result_container {
   display: flex;
   margin: 10px;
   align-items: center;
@@ -11,4 +15,8 @@
 
 .result_primary {
   color: #d0cbcb;
+}
+
+.results_container::-webkit-scrollbar {
+  width: 1em;
 }
