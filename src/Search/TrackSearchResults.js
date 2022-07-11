@@ -13,7 +13,6 @@ const TrackSearchResults = (props) => {
   return (
     <div
       className="result_container"
-      style={{ cursor: "pointer" }}
       onClick={handlePlay}
     >
       <img src={track.albumUrl} style={{ height: "64px", width: "64px" }} />

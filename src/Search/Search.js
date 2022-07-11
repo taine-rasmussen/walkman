@@ -61,13 +61,15 @@ const Search = ({ setPlayingTrack, accessToken }) => {
         value={search}
         onChange={e => setSearch(e.target.value)}
       />
-      <div className="results_container">
+      <div
+        className="results_container"
+        style={search ? { boxShadow: '0px 0px 4px 0px #fff' } : null}
+      >
         {searchResults?.map(track => (
           <TrackSearchResults
             track={track}
             key={track.uri}
             chooseTrack={chooseTrack}
-            search={search}
           />
         ))}
       </div>
