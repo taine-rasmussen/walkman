@@ -12,7 +12,7 @@ const TrackSearchResults = (props) => {
 
   return (
     <div
-      className="results_container "
+      className="results_container"
       style={{ cursor: "pointer" }}
       onClick={handlePlay}
     >
