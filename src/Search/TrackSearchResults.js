@@ -1,4 +1,4 @@
-
+import './Search.css'
 const TrackSearchResults = (props) => {
   const {
     track,
@@ -11,7 +11,7 @@ const TrackSearchResults = (props) => {
 
   return (
     <div
-      className="d-flex m-2 align-items-center"
+      className="results_container"
       style={{ cursor: "pointer" }}
       onClick={handlePlay}
     >
