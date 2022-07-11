@@ -17,9 +17,9 @@ const TrackSearchResults = (props) => {
       onClick={handlePlay}
     >
       <img src={track.albumUrl} style={{ height: "64px", width: "64px" }} />
-      <div className="ml-3">
+      <div className="results_song">
         <div>{track.title}</div>
-        <div className="text-muted">{track.artist}</div>
+        <div>{track.artist}</div>
       </div>
     </div>
   )
