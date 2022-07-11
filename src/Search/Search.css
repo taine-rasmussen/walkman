@@ -6,7 +6,6 @@
   display: flex;
   margin: 10px;
   align-items: center;
-  cursor: "pointer";
 }
 
 .results_song {
@@ -29,4 +28,5 @@
 }
 
 .result_container:hover {
+  border-bottom: #1dd05d;
 }
