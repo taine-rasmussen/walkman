@@ -18,7 +18,7 @@ const TrackSearchResults = (props) => {
     >
       <img src={track.albumUrl} style={{ height: "64px", width: "64px" }} />
       <div className="results_song">
-        <div>{track.title}</div>
+        <div className="result_primary">{track.title}</div>
         <div>{track.artist}</div>
       </div>
     </div>
