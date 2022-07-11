@@ -6,6 +6,7 @@
   display: flex;
   margin: 10px;
   align-items: center;
+  cursor: "pointer";
 }
 
 .results_song {
@@ -18,5 +19,11 @@
 }
 
 .results_container::-webkit-scrollbar {
-  width: 1em;
+  width: 0.5em;
+}
+
+.results_container::-webkit-scrollbar-thumb {
+  background-color: #5e5e5e;
+  outline: 1px solid #5e5e5e;
+  border-radius: 10px;
 }

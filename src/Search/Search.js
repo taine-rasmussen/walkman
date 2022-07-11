@@ -67,6 +67,7 @@ const Search = ({ setPlayingTrack, accessToken }) => {
             track={track}
             key={track.uri}
             chooseTrack={chooseTrack}
+            search={search}
           />
         ))}
       </div>
