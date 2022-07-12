@@ -40,3 +40,18 @@
   border-radius: 10px;
   color: #fff;
 }
+
+.search_input::placeholder {
+  color: #fff;
+}
+
+.search_input:focus {
+  background: #5e5e5e;
+  color: #fff;
+}
+
+.form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
