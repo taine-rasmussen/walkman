@@ -44,3 +44,8 @@
 .search_input::placeholder {
   color: #fff;
 }
+
+.search_input:focus {
+  background: #5e5e5e;
+  color: #fff;
+}
