@@ -60,6 +60,7 @@ const Search = ({ setPlayingTrack, accessToken }) => {
         placeholder="Search Songs/Artist"
         value={search}
         onChange={e => setSearch(e.target.value)}
+        className="search_input"
       />
       <div
         className="results_container"
