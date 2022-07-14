@@ -53,6 +53,12 @@ const Search = ({ setPlayingTrack, accessToken }) => {
       return () => cancel = true;
     }, [search, accessToken])
 
+  useEffect(
+    () => {
+      if (!searchResults) return;
+
+    }, [searchResults])
+
   return (
     <Container>
       <Form.Control
