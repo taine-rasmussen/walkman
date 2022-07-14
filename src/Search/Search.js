@@ -11,6 +11,7 @@ const Search = ({ setPlayingTrack, accessToken }) => {
 
   const [search, setSearch] = useState('')
   const [searchResults, setSearchResults] = useState([])
+  const [topResults, setTopResults] = useState([])
 
   const chooseTrack = (track) => {
     setPlayingTrack(track);
@@ -56,6 +57,8 @@ const Search = ({ setPlayingTrack, accessToken }) => {
   useEffect(
     () => {
       if (!searchResults) return;
+
+
 
     }, [searchResults])
 
