@@ -4,6 +4,8 @@ import { Container, Form } from 'react-bootstrap'
 import SpotifyWebApi from 'spotify-web-api-node'
 import './Search.css'
 
+const topResultCount = 5
+
 const Search = ({ setPlayingTrack, accessToken }) => {
   const spotifyApi = new SpotifyWebApi({
     clientId: 'ee877ff172d84549ba81bbc86cd28478',
@@ -11,6 +13,7 @@ const Search = ({ setPlayingTrack, accessToken }) => {
 
   const [search, setSearch] = useState('')
   const [searchResults, setSearchResults] = useState([])
+  const [topResults, setTopResults] = useState([])
 
   const chooseTrack = (track) => {
     setPlayingTrack(track);
@@ -52,6 +55,12 @@ const Search = ({ setPlayingTrack, accessToken }) => {
       })
       return () => cancel = true;
     }, [search, accessToken])
+
+  useEffect(
+    () => {
+      if (searchResults.length < 1) return;
+      setTopResults(searchResults.slice(0, 5))
+    }, [searchResults])
 
   return (
     <Container>
