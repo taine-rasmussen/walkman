@@ -4,6 +4,8 @@ import { Container, Form } from 'react-bootstrap'
 import SpotifyWebApi from 'spotify-web-api-node'
 import './Search.css'
 
+const topResultCount = 5
+
 const Search = ({ setPlayingTrack, accessToken }) => {
   const spotifyApi = new SpotifyWebApi({
     clientId: 'ee877ff172d84549ba81bbc86cd28478',
@@ -56,9 +58,11 @@ const Search = ({ setPlayingTrack, accessToken }) => {
 
   useEffect(
     () => {
-      if (!searchResults) return;
+      if (searchResults.length < 1) return;
 
+      topResults.push(searchResults[0])
 
+      console.log(topResults)
 
     }, [searchResults])
 
