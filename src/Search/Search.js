@@ -59,11 +59,7 @@ const Search = ({ setPlayingTrack, accessToken }) => {
   useEffect(
     () => {
       if (searchResults.length < 1) return;
-
-      topResults.push(searchResults[0])
-
-      console.log(topResults)
-
+      setTopResults(searchResults.slice(0, 5))
     }, [searchResults])
 
   return (
