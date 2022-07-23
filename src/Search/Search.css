@@ -20,6 +20,14 @@
   color: #d0cbcb;
 }
 
+.results_track {
+  margin: 10px;
+}
+
+.result_secondary {
+  color: #fff;
+}
+
 .results_container::-webkit-scrollbar {
   width: 0.5em;
 }
@@ -28,10 +36,6 @@
   background-color: #5e5e5e;
   outline: 1px solid #5e5e5e;
   border-radius: 10px;
-}
-
-.result_container:hover {
-  border-bottom: 1px solid #1dd05d;
 }
 
 .search_input {
