@@ -20,6 +20,14 @@
   color: #d0cbcb;
 }
 
+.results_track {
+  margin: 10px;
+}
+
+.result_secondary {
+  color: #fff;
+}
+
 .results_container::-webkit-scrollbar {
   width: 0.5em;
 }
