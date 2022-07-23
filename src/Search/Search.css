@@ -30,10 +30,6 @@
   border-radius: 10px;
 }
 
-.result_container:hover {
-  border-bottom: 1px solid #1dd05d;
-}
-
 .search_input {
   background: #5e5e5e;
   border: none;
