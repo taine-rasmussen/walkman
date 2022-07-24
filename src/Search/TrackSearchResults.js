@@ -14,18 +14,24 @@ const TrackSearchResults = (props) => {
   console.log(topResults)
   return (
     <>
-      {topResults.map(result => (
-        <div className="top_results_container">
-          <div className="top_result">
-            <h3>Top Results</h3>
-            <div className="top_result_info">
-              <img src={result.albumUrl} style={{ height: "64px", width: "64px" }} />
-              {result.title}
-              {result.artist}
-            </div>
+      <div className="top_results_container">
+        <div className="top_result">
+          <h3>Top Results</h3>
+          <div className="top_result_info">
+            <img src={topResults[0]?.albumUrl} style={{ height: "64px", width: "64px" }} />
+            {topResults[0]?.title}
+            {topResults[0]?.artist}
           </div>
         </div>
-      ))}
+        {topResults.map(result => {
+          if (topResults.indexOf(result) == 0) return
+          (
+            <>
+              other artists
+            </>
+          )
+        })}
+      </div>
 
       {searchResults?.map(track => {
         return (
