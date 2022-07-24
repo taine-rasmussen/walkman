@@ -77,6 +77,7 @@ const Search = ({ setPlayingTrack, accessToken }) => {
         < TrackSearchResults
           searchResults={searchResults}
           chooseTrack={chooseTrack}
+          topResults={topResults}
         />
       </div>
     </Container>

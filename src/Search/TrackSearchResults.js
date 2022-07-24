@@ -3,6 +3,7 @@ import './Search.css'
 const TrackSearchResults = (props) => {
   const {
     chooseTrack,
+    topResults,
     searchResults
   } = props
 
@@ -10,8 +11,22 @@ const TrackSearchResults = (props) => {
     chooseTrack(track)
   }
 
+  console.log(topResults)
   return (
     <>
+      {topResults.map(result => (
+        <div className="top_results_container">
+          <div className="top_result">
+            <h3>Top Results</h3>
+            <div className="top_result_info">
+              <img src={result.albumUrl} style={{ height: "64px", width: "64px" }} />
+              {result.title}
+              {result.artist}
+            </div>
+          </div>
+        </div>
+      ))}
+
       {searchResults?.map(track => {
         return (
           < div
