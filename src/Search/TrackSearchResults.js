@@ -12,6 +12,8 @@ const TrackSearchResults = (props) => {
 
   const topResult = searchResults[0]
 
+  if (searchResults.length < 1) return;
+
   return (
     <>
       <div className="container">
