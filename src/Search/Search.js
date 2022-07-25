@@ -11,7 +11,6 @@ const Search = ({ setPlayingTrack, accessToken }) => {
 
   const [search, setSearch] = useState('')
   const [searchResults, setSearchResults] = useState([])
-  const [topResults, setTopResults] = useState([])
 
   const chooseTrack = (track) => {
     console.log(track)
@@ -55,12 +54,6 @@ const Search = ({ setPlayingTrack, accessToken }) => {
       return () => cancel = true;
     }, [search, accessToken])
 
-  useEffect(
-    () => {
-      if (searchResults.length < 1) return;
-      setTopResults(searchResults.slice(0, 5))
-    }, [searchResults])
-
   return (
     <Container>
       <Form.Control
@@ -77,7 +70,6 @@ const Search = ({ setPlayingTrack, accessToken }) => {
         < TrackSearchResults
           searchResults={searchResults}
           chooseTrack={chooseTrack}
-          topResults={topResults}
         />
       </div>
     </Container>
