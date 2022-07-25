@@ -63,15 +63,10 @@ const Search = ({ setPlayingTrack, accessToken }) => {
         onChange={e => setSearch(e.target.value)}
         className="search_input"
       />
-      <div
-        className="results_container"
-        style={search ? { boxShadow: '0px 0px 4px 0px #fff' } : null}
-      >
-        < TrackSearchResults
-          searchResults={searchResults}
-          chooseTrack={chooseTrack}
-        />
-      </div>
+      < TrackSearchResults
+        searchResults={searchResults}
+        chooseTrack={chooseTrack}
+      />
     </Container>
   )
 }

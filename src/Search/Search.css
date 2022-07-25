@@ -43,6 +43,7 @@
   border: none;
   border-radius: 10px;
   color: #fff;
+  width: 20%;
 }
 
 .search_input::placeholder {
