@@ -55,19 +55,21 @@ const Search = ({ setPlayingTrack, accessToken }) => {
     }, [search, accessToken])
 
   return (
-    <Container>
-      <Form.Control
-        type="Search"
-        placeholder="Search Songs/Artist"
-        value={search}
-        onChange={e => setSearch(e.target.value)}
-        className="search_input"
-      />
+    <>
+      <Container>
+        <Form.Control
+          type="Search"
+          placeholder="Search Songs/Artist"
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          className="search_input"
+        />
+      </Container>
       < TrackSearchResults
         searchResults={searchResults}
         chooseTrack={chooseTrack}
       />
-    </Container>
+    </>
   )
 }
 
