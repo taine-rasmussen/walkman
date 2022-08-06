@@ -16,7 +16,7 @@ const TrackSearchResults = (props) => {
 
   return (
     <>
-      <div className="container">
+      <div className="all_results_container">
         <div>
           <h3>Top Result</h3>
           <div>
@@ -25,26 +25,29 @@ const TrackSearchResults = (props) => {
             {topResult?.artist}
           </div>
         </div>
-        {searchResults?.map(track => {
-          if (searchResults.indexOf(track) == 0) return;
-          return (
-            <>
-              < div
-                className="result_container"
-                onClick={() => { handlePlay(track) }}
-                style={{ cursor: "pointer" }}
-                key={track.uri}
-              >
-                <img src={track.albumUrl} style={{ height: "64px", width: "64px" }} />
-                <div className="results_track">
-                  <div className="result_primary">{track.title}</div>
-                  <div className="result_secondary">{track.artist}</div>
+        <div className="scroll_results">
+          <h3>Songs</h3>
+          {searchResults?.map(track => {
+            if (searchResults.indexOf(track) == 0) return;
+            return (
+              <>
+                < div
+                  className="result_container"
+                  onClick={() => { handlePlay(track) }}
+                  style={{ cursor: "pointer" }}
+                  key={track.uri}
+                >
+                  <img src={track.albumUrl} style={{ height: "64px", width: "64px" }} />
+                  <div className="results_track">
+                    <div className="result_primary">{track.title}</div>
+                    <div className="result_secondary">{track.artist}</div>
+                  </div>
                 </div>
-              </div>
-            </>
-          )
-        })
-        }
+              </>
+            )
+          })
+          }
+        </div>
       </div>
     </>
   )

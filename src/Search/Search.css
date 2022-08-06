@@ -4,11 +4,25 @@
 }
 .result_container {
   display: flex;
+  flex-direction: row;
   padding-bottom: 5px;
   margin: 10px;
   align-items: center;
-  width: max-content;
+  /* width: max-content; */
   border-bottom: 1px solid #181818;
+}
+
+.all_results_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 80vw;
+}
+
+.scroll_results {
+  max-height: 50%;
+  overflow: auto;
+  border-bottom: 3px solid #fff;
 }
 
 .results_song {

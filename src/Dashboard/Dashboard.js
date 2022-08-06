@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Player from '../mainPlayer/Player'
 import Search from '../Search/Search'
 import useAuth from '../Login/useAuth'
+import Body from '../Body/Body'
 import './Dashboard.css'
 
 const Dashboard = ({ code }) => {
@@ -15,6 +16,7 @@ const Dashboard = ({ code }) => {
         setPlayingTrack={setPlayingTrack}
         accessToken={accessToken}
       />
+      <Body />
       <div className="dashboard_footer">
         <Player
           accessToken={accessToken}
