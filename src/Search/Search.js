@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import TrackSearchResults from './TrackSearchResults'
 import { Container, Form } from 'react-bootstrap'
 import SpotifyWebApi from 'spotify-web-api-node'
-import './Search.css'
 
 const Search = ({ setPlayingTrack, accessToken }) => {
   const spotifyApi = new SpotifyWebApi({
@@ -13,7 +12,6 @@ const Search = ({ setPlayingTrack, accessToken }) => {
   const [searchResults, setSearchResults] = useState([])
 
   const chooseTrack = (track) => {
-    console.log(track)
     setPlayingTrack(track);
     setSearch('');
   }
@@ -55,21 +53,25 @@ const Search = ({ setPlayingTrack, accessToken }) => {
     }, [search, accessToken])
 
   return (
-    <>
-      <Container>
-        <Form.Control
-          type="Search"
-          placeholder="Search Songs/Artist"
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-          className="search_input"
-        />
-      </Container>
-      < TrackSearchResults
-        searchResults={searchResults}
-        chooseTrack={chooseTrack}
+    <Container>
+      <Form.Control
+        type="Search"
+        placeholder="Search Songs/Artist"
+        value={search}
+        onChange={e => setSearch(e.target.value)}
       />
-    </>
+      <div
+        style={{ overflowY: 'auto' }}
+      >
+        {searchResults?.map(track => (
+          <TrackSearchResults
+            track={track}
+            key={track.uri}
+            chooseTrack={chooseTrack}
+          />
+        ))}
+      </div>
+    </Container>
   )
 }
 
