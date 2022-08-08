@@ -12,14 +12,14 @@ const TrackSearchResults = (props) => {
 
   return (
     <div
-      className="results_container"
-      style={{ cursor: "pointer" }}
+      className="result_container"
       onClick={handlePlay}
+      style={{ cursor: "pointer" }}
     >
       <img src={track.albumUrl} style={{ height: "64px", width: "64px" }} />
-      <div className="ml-3">
-        <div>{track.title}</div>
-        <div className="text-muted">{track.artist}</div>
+      <div className="results_song">
+        <div className="result_primary">{track.title}</div>
+        <div>{track.artist}</div>
       </div>
     </div>
   )

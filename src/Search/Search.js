@@ -61,7 +61,8 @@ const Search = ({ setPlayingTrack, accessToken }) => {
         onChange={e => setSearch(e.target.value)}
       />
       <div
-        style={{ overflowY: 'auto' }}
+        className='results_container'
+        style={search ? { boxShadow: '0px 0px 4px 0px #fff' } : null}
       >
         {searchResults?.map(track => (
           <TrackSearchResults
