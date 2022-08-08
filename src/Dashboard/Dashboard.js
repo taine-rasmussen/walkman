@@ -16,7 +16,7 @@ const Dashboard = ({ code }) => {
         setPlayingTrack={setPlayingTrack}
         accessToken={accessToken}
       />
-      <Body />
+      <Body playingTrack={playingTrack} />
       <div className="dashboard_footer">
         <Player
           accessToken={accessToken}
