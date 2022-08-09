@@ -13,15 +13,7 @@ const Body = (props) => {
 
   return (
     <div className='body_container'>
-      {playingTrack ? (
-        <div className='body_playing_container'>
-          <img src={playingTrack.albumUrl} style={{ height: "256px", width: "256px" }} />
-          <h3>{playingTrack.title}</h3>
-        </div>
-      ) : (
-        <BsSpotify />
-      )
-      }
+      <BsSpotify />
     </div>
   )
 }
