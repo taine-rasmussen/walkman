@@ -8,6 +8,8 @@ const Body = (props) => {
     playingTrack
   } = props
 
+  // build recently played feature
+
 
   return (
     <div className='body_container'>
