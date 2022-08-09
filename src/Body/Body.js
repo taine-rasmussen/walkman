@@ -7,7 +7,9 @@ const Body = (props) => {
 
   return (
     <div className='body_container'>
-      <BsSpotify />
+      <div className='spinner'>
+        <BsSpotify />
+      </div>
     </div>
   )
 }
