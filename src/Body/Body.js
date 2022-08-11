@@ -16,8 +16,6 @@ const Body = (props) => {
       setRecentlyPlayed([...recentlyPlayed, playingTrack])
     }, [playingTrack])
 
-  console.log(recentlyPlayed)
-
   return (
     <div className='body_container'>
       <div className='spinner'>
