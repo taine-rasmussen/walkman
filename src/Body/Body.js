@@ -1,13 +1,22 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 import { BsSpotify } from 'react-icons/bs'
 
 import './Body.css'
 
 const Body = (props) => {
-
   const {
     playingTrack
   } = props
+
+  const [recentlyPlayed, setRecentlyPlayed] = useState([])
+
+  useEffect(
+    () => {
+      if (!playingTrack) return;
+      setRecentlyPlayed([...recentlyPlayed, playingTrack])
+    }, [playingTrack])
+
+  console.log(recentlyPlayed)
 
   return (
     <div className='body_container'>
