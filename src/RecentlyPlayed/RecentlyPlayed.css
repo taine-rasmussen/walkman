@@ -33,6 +33,10 @@
   margin: 10px;
 }
 
+.recently_played_song:hover {
+  cursor: pointer;
+}
+
 .recently_played_info {
   display: flex;
   flex-direction: column;
