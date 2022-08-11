@@ -5,6 +5,10 @@ import './Body.css'
 
 const Body = (props) => {
 
+  const {
+    playingTrack
+  } = props
+
   return (
     <div className='body_container'>
       <div className='spinner'>
