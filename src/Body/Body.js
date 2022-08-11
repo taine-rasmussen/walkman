@@ -19,10 +19,14 @@ const Body = (props) => {
   return (
     <div className='body_container'>
       <div className='body_left_container'>
-        <h3>RecentlyPlayed</h3>
+        <h3>Recently played</h3>
         {recentlyPlayed.map((song, i) => (
           <div className='recently_played_song' key={i}>
-            {song.title}
+            <img src={song.albumUrl} style={{ height: "64px", width: "64px" }} />
+            <div className="recently_played_info">
+              <div className="recently_primary">{song.title}</div>
+              <div>{song.artist}</div>
+            </div>
           </div>
         ))}
       </div>

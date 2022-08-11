@@ -8,3 +8,13 @@ body {
 body::-webkit-scrollbar {
   width: 0;
 }
+
+.body::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.body::-webkit-scrollbar-thumb {
+  background-color: #5e5e5e;
+  outline: 1px solid #5e5e5e;
+  border-radius: 10px;
+}
