@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { BsSpotify } from 'react-icons/bs'
 
 import './Body.css'
@@ -26,4 +25,4 @@ export default Body
 // - Clear btn
 // - CLicking song plays it
 // - Conditional rendering of list before anything has played
-// - Refactor into own componet
+// - Refactor into own componet - Done

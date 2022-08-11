@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import { MdClear } from 'react-icons/md'
+
 import './RecentlyPlayed.css'
 
 const RecentlyPlayed = (props) => {
@@ -14,9 +16,16 @@ const RecentlyPlayed = (props) => {
       setRecentlyPlayed([...recentlyPlayed, playingTrack])
     }, [playingTrack])
 
+  const handleClear = () => {
+    setRecentlyPlayed([])
+  }
+
   return (
     <div className='body_left_container'>
-      <h3>Recently played</h3>
+      <div className='recently_played_header'>
+        <h3>Recently played</h3>
+        <MdClear onClick={handleClear} className='clear' />
+      </div>
       {recentlyPlayed.map((song, i) => (
         <div className='recently_played_song' key={i}>
           <img src={song.albumUrl} style={{ height: "64px", width: "64px" }} />
