@@ -5,7 +5,8 @@ import './RecentlyPlayed.css'
 
 const RecentlyPlayed = (props) => {
   const {
-    playingTrack
+    playingTrack,
+    setPlayingTrack
   } = props
 
   const [recentlyPlayed, setRecentlyPlayed] = useState([])
@@ -20,6 +21,10 @@ const RecentlyPlayed = (props) => {
     setRecentlyPlayed([])
   }
 
+  const handleClick = (song) => {
+    setPlayingTrack(song)
+  }
+
   return (
     <div className='body_left_container'>
       <div className='recently_played_header'>
@@ -27,7 +32,11 @@ const RecentlyPlayed = (props) => {
         <MdClear onClick={handleClear} className='clear' />
       </div>
       {recentlyPlayed.map((song, i) => (
-        <div className='recently_played_song' key={i}>
+        <div
+          className='recently_played_song'
+          onClick={() => { handleClick(song) }}
+          key={i}
+        >
           <img src={song.albumUrl} style={{ height: "64px", width: "64px" }} />
           <div className="recently_played_info">
             <div className="recently_primary">{song.title}</div>
