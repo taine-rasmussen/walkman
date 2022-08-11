@@ -18,7 +18,15 @@ const Body = (props) => {
 
   return (
     <div className='body_container'>
-      <div className='spinner'>
+      <div className='body_left_container'>
+        <h3>RecentlyPlayed</h3>
+        {recentlyPlayed.map((song, i) => (
+          <div className='recently_played_song' key={i}>
+            {song.title}
+          </div>
+        ))}
+      </div>
+      <div className='pulse'>
         <BsSpotify />
       </div>
     </div>
