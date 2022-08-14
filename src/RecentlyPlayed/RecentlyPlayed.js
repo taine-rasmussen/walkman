@@ -34,19 +34,22 @@ const RecentlyPlayed = (props) => {
           <h5 onClick={handleClear}>Clear</h5>
         </div>
       )}
-      {recentlyPlayed.map((song, i) => (
-        <div
-          className='recently_played_song'
-          onClick={() => { handleClick(song) }}
-          key={i}
-        >
-          <img src={song.albumUrl} style={{ height: "64px", width: "64px" }} />
-          <div className="recently_played_info">
-            <div className="recently_primary">{song.title}</div>
-            <div>{song.artist}</div>
+      <div className='recently_played_list'>
+        {recentlyPlayed.map((song, i) => (
+          <div
+            className='recently_played_song'
+            onClick={() => { handleClick(song) }}
+            key={i}
+          >
+            <img src={song.albumUrl} style={{ height: "64px", width: "64px" }} />
+            <div className="recently_played_info">
+              <div className="recently_primary">{song.title}</div>
+              <div>{song.artist}</div>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+
+      </div>
     </div>
   )
 }

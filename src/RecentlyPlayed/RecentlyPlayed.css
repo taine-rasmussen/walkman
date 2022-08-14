@@ -1,13 +1,13 @@
 .body_left_container {
   width: 33%;
   height: 90%;
-  overflow: auto;
   margin: 2rem;
 }
 
 .recently_played_header {
   display: flex;
   flex-direction: column;
+  position: absolute;
 }
 
 .recently_played_header h5 {
@@ -56,4 +56,9 @@
 
 .recently_primary {
   color: #d0cbcb;
+}
+
+.recently_played_list {
+  overflow: auto;
+  padding-top: 60px;
 }
