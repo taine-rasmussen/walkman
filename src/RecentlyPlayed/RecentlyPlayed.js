@@ -27,10 +27,13 @@ const RecentlyPlayed = (props) => {
 
   return (
     <div className='body_left_container'>
-      <div className='recently_played_header'>
-        <h3>Recently played</h3>
-        <h5 onClick={handleClear}>Clear</h5>
-      </div>
+
+      {recentlyPlayed?.length >= 1 && (
+        <div className='recently_played_header'>
+          <h3>Recently played</h3>
+          <h5 onClick={handleClear}>Clear</h5>
+        </div>
+      )}
       {recentlyPlayed.map((song, i) => (
         <div
           className='recently_played_song'
