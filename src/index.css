@@ -3,6 +3,7 @@ body {
   background: #181818;
   margin: 0;
   padding: 0;
+  overflow-y: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -18,23 +19,3 @@ body {
   outline: 1px solid #5e5e5e;
   border-radius: 10px;
 }
-/* 
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-  background-color: rgba(255, 255, 255, 0);
-  -webkit-border-radius: 100px;
-}
-::-webkit-scrollbar:hover {
-  width: 7px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #fae5f6;
-  -webkit-border-radius: 100px;
-}
-
-::-webkit-scrollbar-thumb:hover,
-::-webkit-scrollbar-thumb:active {
-  background: #fabae1;
-} */
