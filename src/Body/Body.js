@@ -27,6 +27,6 @@ export default Body
 // TODO
 // - Style scroll bar on overflow
 // - Clear btn - DONE
-// - CLicking song plays it
+// - CLicking song plays it - DONE
 // - Conditional rendering of list before anything has played
 // - Refactor into own componet - Done

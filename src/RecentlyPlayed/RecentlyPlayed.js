@@ -29,7 +29,7 @@ const RecentlyPlayed = (props) => {
     <div className='body_left_container'>
       <div className='recently_played_header'>
         <h3>Recently played</h3>
-        <MdClear onClick={handleClear} className='clear' />
+        <h5 onClick={handleClear}>Clear</h5>
       </div>
       {recentlyPlayed.map((song, i) => (
         <div
