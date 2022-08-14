@@ -12,6 +12,7 @@
 
 .recently_played_header h5 {
   color: #7b7b7b;
+  width: max-content;
 }
 
 .recently_played_header h5:hover {
