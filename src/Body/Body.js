@@ -23,10 +23,3 @@ const Body = (props) => {
 }
 
 export default Body
-
-// TODO
-// - Style scroll bar on overflow
-// - Clear btn - DONE
-// - CLicking song plays it - DONE
-// - Conditional rendering of list before anything has played: DONE
-// - Refactor into own componet - Done
